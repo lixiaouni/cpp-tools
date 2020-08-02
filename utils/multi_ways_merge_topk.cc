@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <unordered_set>
-#include "MultiWaysMergeTopK.h"
+#include "multi_ways_merge_topk.h"
 
 void MultiWaysMergeTopK::test() {
     std::vector<std::shared_ptr<std::vector<MergeSortData>>> multiWays;

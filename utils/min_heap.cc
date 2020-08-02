@@ -2,7 +2,7 @@
 // Created by shawnunili on 2019-11-04.
 //
 
-#include "MinHeap.h"
+#include "min_heap.h"
 
 xct::MinHeap::MinHeap(size_t heapSize) : m_heapSize(heapSize), m_queue(minHeapCmp) {
     if (m_heapSize == 0) {

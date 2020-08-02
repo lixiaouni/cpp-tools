@@ -8,7 +8,7 @@
 #include <vector>
 #include <memory>
 
-#include "MaxHeap.h"
+#include "max_heap.h"
 
 class MultiWaysMergeTopK {
 public:

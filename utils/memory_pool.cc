@@ -2,7 +2,7 @@
 // Created by shawnunili on 2019/7/26.
 //
 
-#include "MemoryPool.h"
+#include "memory_pool.h"
 #include <iostream>
 #include<string>
 #include <list>
@@ -11,7 +11,7 @@ using namespace std;
 
 char* MemoryPool::myMalloc(const int memSize) {
     //采用首次适应算法
-    list<node*>::iterator it;
+    list<Node*>::iterator it;
     if (memSize <= m_First_Count) {
         it = first.begin();
         while (it != first.end()) {
@@ -20,7 +20,7 @@ char* MemoryPool::myMalloc(const int memSize) {
                 int temp = (*it)->len;
                 (*it)->len = memSize;
                 if (temp - memSize > 0) {
-                    node* obj = new node;
+                    Node* obj = new Node;
                     obj->flag = true;
                     obj->len = temp - memSize;
                     obj->offset = (*it)->offset + memSize;
@@ -46,7 +46,7 @@ char* MemoryPool::myMalloc(const int memSize) {
                 int temp = (*it)->len;
                 (*it)->len = memSize;
                 if (temp - memSize > 0) {
-                    node* obj = new node;
+                    Node* obj = new Node;
                     obj->flag = true;
                     obj->len = temp - memSize;
                     obj->offset = (*it)->offset + memSize;
@@ -72,7 +72,7 @@ char* MemoryPool::myMalloc(const int memSize) {
                 int temp = (*it)->len;
                 (*it)->len = memSize;
                 if (temp - memSize > 0) {
-                    node* obj = new node;
+                    Node* obj = new Node;
                     obj->flag = true;
                     obj->len = temp - memSize;
                     obj->offset = (*it)->offset + memSize;
@@ -101,7 +101,7 @@ char* MemoryPool::myMalloc(const int memSize) {
 void MemoryPool::memFree(void* address_arg) {
     char* freeAddress = static_cast<char*>(address_arg);
     int offset;
-    list<node*>::iterator it;
+    list<Node*>::iterator it;
     if (freeAddress >= m_First_Address && freeAddress < (m_First_Address + 1024))//位于第一块
     {
         offset = freeAddress - m_First_Address;
