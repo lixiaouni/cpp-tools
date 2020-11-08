@@ -3,20 +3,13 @@
 //
 #include <iostream>
 #include <vector>
-#include <set>
-#include <unordered_map>
-#include <map>
-#include <sstream>
-#include <ctime>
-#include <fstream>
-#include "utils/singleton.h"
-#include "concurent/base_knowledge.h"
+#include "concurent/high_quality.h"
 
 using namespace std;
 using namespace xct;
 
 int main(int argc, char *argv[]) {
-  char* test = "li";
-  cout << strlen(test) << endl;
+  Print1ToMaxOfNDigits p;
+  p.Test();
   return 0;
 }

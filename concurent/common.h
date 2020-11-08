@@ -6,6 +6,13 @@
 namespace xct {
 struct ListNode {
   int value;
-  ListNode* next;
+  ListNode *next;
 };
+
+struct BinaryTreeNode {
+  int value;
+  BinaryTreeNode *left;
+  BinaryTreeNode *right;
+};
+
 }
