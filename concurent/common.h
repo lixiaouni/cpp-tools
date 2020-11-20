@@ -18,6 +18,13 @@ struct BinaryTreeNode {
   BinaryTreeNode *right;
 };
 
+struct BinaryTreeNodeWithParent {
+  int value;
+  BinaryTreeNodeWithParent *left;
+  BinaryTreeNodeWithParent *right;
+  BinaryTreeNodeWithParent *parent;
+};
+
 struct ComplexListNode {
   int value;
   ComplexListNode* next;
