@@ -331,7 +331,7 @@ bool GetTreeNodePath(TreeNode* root, TreeNode* p, std::vector<TreeNode*>& path) 
   if (root == p) {
 	return true;
   }
-  if (auto it = root->children.begin(); it != root->children.end(); ++it) {
+  for (auto it = root->children.begin(); it != root->children.end(); ++it) {
     bool ret = GetTreeNodePath(*it, p, path);
     if (ret) {
       return true;
